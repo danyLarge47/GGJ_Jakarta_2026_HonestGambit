@@ -235,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21a4a70b965043409bdead0006c489c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420031}
   gameplay_1: {fileID: 908793226}
   startingUp: {fileID: 2040353606}
   opponentUp: {fileID: 1362261871}
@@ -259,6 +258,10 @@ Transform:
   - {fileID: 2040353605}
   - {fileID: 1016486330}
   - {fileID: 1362261872}
+  - {fileID: 1600084649}
+  - {fileID: 1306444058}
+  - {fileID: 1408953900}
+  - {fileID: 1889559808}
   - {fileID: 1677497398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -835,6 +838,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -960,6 +964,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649cd3eb4ea634b3989376403fccce3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeMode:
+    m_UpdateTime: 0
+  m_RunIn: 0
+  m_Transition:
+    m_CurrentShotCamera: {fileID: 0}
+    m_SmoothTimePosition: 0.1
+    m_SmoothTimeRotation: 0.1
+  m_Clip:
+    rid: 4572434576944398642
+  references:
+    version: 2
+    RefIds:
+    - rid: 4572434576944398642
+      type: {class: CameraClipNone, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1001 &520078481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1322,7 +1353,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1c37e3d780c952949ba166a99a4e50e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b538257cd2a3e5a489abdbdda95640bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -1456,6 +1487,10 @@ MonoBehaviour:
   targetExpression: {fileID: 820605159}
   MC_Up: {fileID: 1051411384}
   MC_Down: {fileID: 1595866606}
+  action_success: {fileID: 1600084650}
+  action_fail: {fileID: 1306444059}
+  game_win: {fileID: 1408953901}
+  game_lose: {fileID: 1889559809}
 --- !u!1 &1016486328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,91 +1715,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a620d9cab5f6442a26b9d2d4d6927c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1266187172
-PrefabInstance:
+--- !u!1 &1306444057
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1306444058}
+  - component: {fileID: 1306444059}
+  m_Layer: 0
+  m_Name: Action lose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1306444058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306444057}
   serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1449563824455163643, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_Name
-      value: Rhythm Point (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449563824455163643, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537625461706516273, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145397247038437080, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: targetScale
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7858884938702263240, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7858884938702263240, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7858884938702263240, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087135733907542715, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 122227205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1306444059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306444057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280989d249f9b482d890a5f97137f44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 4572434576944398621
+    - rid: 4572434576944398646
+  references:
+    version: 2
+    RefIds:
+    - rid: 4572434576944398621
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 4572434576944398622
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 4572434576944398623
+    - rid: 4572434576944398622
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 8300000, guid: 56dbd89e97ecdbd48b0ad7bf6e585f6d, type: 3}
+    - rid: 4572434576944398623
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4572434576944398646
+      type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Camera:
+          m_Property:
+            rid: 4572434576944398647
+        m_Delay: 0
+        m_Duration: 0.5
+        m_ShakeEffect:
+          m_ShakePosition: 1
+          m_ShakeRotation: 1
+          m_Magnitude: 1
+          m_Roughness: 0.3
+          m_Transform: {fileID: 0}
+          m_Radius: 10
+    - rid: 4572434576944398647
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1362261870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1844,8 @@ MonoBehaviour:
     m_Instructions:
     - rid: 1694013863198982403
     - rid: 1694013863198982406
+    - rid: 4572434576944398621
+    - rid: 4572434576944398664
   references:
     version: 2
     RefIds:
@@ -1854,6 +1902,51 @@ MonoBehaviour:
       type: {class: GetPositionVector3, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Position: {x: 8, y: -5.5, z: 0}
+    - rid: 4572434576944398621
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 4572434576944398622
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 4572434576944398623
+    - rid: 4572434576944398622
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 8300000, guid: 9091ee1a4e3387f4aa16bd13fd81f756, type: 3}
+    - rid: 4572434576944398623
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4572434576944398664
+      type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Camera:
+          m_Property:
+            rid: 4572434576944398665
+        m_Delay: 0
+        m_Duration: 0.5
+        m_ShakeEffect:
+          m_ShakePosition: 1
+          m_ShakeRotation: 0
+          m_Magnitude: 0.1
+          m_Roughness: 12
+          m_Transform: {fileID: 0}
+          m_Radius: 15
+    - rid: 4572434576944398665
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!4 &1362261872
 Transform:
   m_ObjectHideFlags: 0
@@ -1930,6 +2023,80 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
+--- !u!1 &1408953899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408953900}
+  - component: {fileID: 1408953901}
+  m_Layer: 0
+  m_Name: Game Seq win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1408953900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408953899}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 122227205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1408953901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408953899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280989d249f9b482d890a5f97137f44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 4572434576944398635
+  references:
+    version: 2
+    RefIds:
+    - rid: 4572434576944398635
+      type: {class: Action_PlayRandom_SFX, ns: , asm: Assembly-CSharp}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        soundClips:
+        - {fileID: 8300000, guid: 4ea5ea3f951acf14495c56598a4a0e37, type: 3}
+        - {fileID: 8300000, guid: 06ac3f40edf64894dbe262a0c237e2d5, type: 3}
+        - {fileID: 8300000, guid: d064f9a41aba622419af2fcbd6ad3abb, type: 3}
+        - {fileID: 8300000, guid: f0713963593de60489abc9cc046b814d, type: 3}
+        - {fileID: 8300000, guid: eb2d257b23273714596aa3ac4b4b2d2b, type: 3}
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 4572434576944398636
+    - rid: 4572434576944398636
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!4 &1429112178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
@@ -2403,6 +2570,102 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
+--- !u!1 &1600084648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1600084649}
+  - component: {fileID: 1600084650}
+  m_Layer: 0
+  m_Name: Action win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1600084649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600084648}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 122227205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600084650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600084648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280989d249f9b482d890a5f97137f44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 4572434576944398621
+    - rid: 4572434576944398659
+  references:
+    version: 2
+    RefIds:
+    - rid: 4572434576944398621
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 4572434576944398622
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 4572434576944398623
+    - rid: 4572434576944398622
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 8300000, guid: 9ea4f2e8e726e8e4d9f1a7b5a5a993b6, type: 3}
+    - rid: 4572434576944398623
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4572434576944398659
+      type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Camera:
+          m_Property:
+            rid: 4572434576944398660
+        m_Delay: 0
+        m_Duration: 0.5
+        m_ShakeEffect:
+          m_ShakePosition: 1
+          m_ShakeRotation: 0
+          m_Magnitude: 0.1
+          m_Roughness: 10
+          m_Transform: {fileID: 0}
+          m_Radius: 10
+    - rid: 4572434576944398660
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!1 &1677497396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,6 +2870,102 @@ Transform:
   - {fileID: 908793225}
   m_Father: {fileID: 1521230607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1889559807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889559808}
+  - component: {fileID: 1889559809}
+  m_Layer: 0
+  m_Name: Game Seq lose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1889559808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889559807}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 122227205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1889559809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889559807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280989d249f9b482d890a5f97137f44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 4572434576944398621
+    - rid: 4572434576944398656
+  references:
+    version: 2
+    RefIds:
+    - rid: 4572434576944398621
+      type: {class: InstructionCommonAudioSFXPlay, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_AudioClip:
+          m_Property:
+            rid: 4572434576944398622
+        m_WaitToComplete: 0
+        m_Config:
+          m_Volume: 1
+          m_Pitch: {x: 1, y: 1}
+          m_TransitionIn: 0
+          m_UpdateMode: 0
+          m_SpatialBlend: 0
+          m_Target:
+            m_Property:
+              rid: 4572434576944398623
+    - rid: 4572434576944398622
+      type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: {fileID: 8300000, guid: a39b44ade1e07cb4ab91a077aede9813, type: 3}
+    - rid: 4572434576944398623
+      type: {class: GetGameObjectNone, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data: 
+    - rid: 4572434576944398656
+      type: {class: InstructionCameraShakeBurst, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Camera:
+          m_Property:
+            rid: 4572434576944398657
+        m_Delay: 0
+        m_Duration: 0.5
+        m_ShakeEffect:
+          m_ShakePosition: 1
+          m_ShakeRotation: 0
+          m_Magnitude: 1
+          m_Roughness: 2
+          m_Transform: {fileID: 0}
+          m_Radius: 10
+    - rid: 4572434576944398657
+      type: {class: GetGameObjectCameraMain, ns: GameCreator.Runtime.Cameras, asm: GameCreator.Runtime.Core}
+      data: 
 --- !u!4 &1979025612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6814882626104818439, guid: 1f731704a6f7db442aa6d45d1a6e630e, type: 3}
@@ -2703,7 +3062,7 @@ MonoBehaviour:
       type: {class: InstructionLogicBroadcastMessage, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Breakpoint: 0
-        m_IsEnabled: 0
+        m_IsEnabled: 1
         m_GameObject:
           m_Property:
             rid: 1694013884660973843
@@ -2825,4 +3184,3 @@ SceneRoots:
   - {fileID: 876755727}
   - {fileID: 612971446}
   - {fileID: 122227205}
-  - {fileID: 1266187172}

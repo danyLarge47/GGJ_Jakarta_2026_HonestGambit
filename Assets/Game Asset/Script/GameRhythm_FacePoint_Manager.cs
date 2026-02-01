@@ -18,6 +18,8 @@ public class GameRhythm_FacePoint_Manager : MonoBehaviour
     bool isRunning;
     GameRhythm_FacePoint lastPoint;
     public Actions MC_Up, MC_Down;
+    public Actions action_success, action_fail;
+    public Actions game_win, game_lose;
 
     [Button]
     void Initialize()
@@ -63,11 +65,30 @@ public class GameRhythm_FacePoint_Manager : MonoBehaviour
     void OnPointScored(float score)
     {
         currentScore += score;
-        if (currentScore >= targetScore) isRunning = false;
+        if (currentScore >= targetScore)
+        {
+            isRunning = false;
+        }
+        else if (score > 0)
+        {
+            action_success?.Run();
+        }
+        else
+        {
+            action_fail?.Run();
+        }
     }
 
     void FinishGame()
     {
         Debug.Log($"Finished — Win: {currentScore >= targetScore}");
+        if (currentScore >= targetScore)
+        {
+            game_win?.Run();
+        }
+        else
+        {
+            game_lose?.Run();
+        }
     }
 }

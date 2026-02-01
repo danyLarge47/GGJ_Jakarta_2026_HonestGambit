@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 231131042}
   - component: {fileID: 231131043}
   m_Layer: 0
-  m_Name: Init Scene
+  m_Name: Intro Cutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7028302, g: 1, b: 0.77814716, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7028302, g: 1, b: 0.77814716, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1353,43 +1353,23 @@ MonoBehaviour:
       m_Calls: []
   m_Instructions:
     m_Instructions:
-    - rid: 1694013863198982433
-    - rid: 1694013863198982430
+    - rid: 4572434576944398614
   references:
     version: 2
     RefIds:
-    - rid: 1694013863198982430
-      type: {class: InstructionCommonSceneLoad, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+    - rid: 4572434576944398614
+      type: {class: InstructionLogicRunActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
         m_Breakpoint: 0
         m_IsEnabled: 1
-        m_Scene:
+        m_Actions:
           m_Property:
-            rid: 1694013863198982431
-        m_Mode: 0
-        m_Async: 0
-        m_SceneEntries:
-          m_Entries: []
-    - rid: 1694013863198982431
-      type: {class: GetSceneAsset, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+            rid: 4572434576944398615
+        m_WaitToFinish: 0
+    - rid: 4572434576944398615
+      type: {class: GetGameObjectActions, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
       data:
-        m_Scene:
-          m_Scene: {fileID: 102900000, guid: afa6f874b9f171247825be56c149ec7f, type: 3}
-          m_SceneName: 02 Gameplay
-          m_SceneIndex: 1
-    - rid: 1694013863198982433
-      type: {class: Action_CanvasGroup, ns: , asm: Assembly-CSharp}
-      data:
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        canvasGroup: {fileID: 1655093097}
-        alpha: 1
-        duration: 0.3
-        interactable: 1
-        blockRaycasts: 1
-        waitComplete: 1
-        hideAfter: 0
-        ease: 1
+        m_Actions: {fileID: 1615991397}
 --- !u!114 &615802366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2230,7 +2210,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7028302, g: 1, b: 0.77814716, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3521,6 +3501,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585735486}
   m_CullTransparentMesh: 1
+--- !u!1 &1615991395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615991396}
+  - component: {fileID: 1615991397}
+  m_Layer: 0
+  m_Name: Play
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1615991396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615991395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1821187332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615991397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615991395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280989d249f9b482d890a5f97137f44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Instructions:
+    m_Instructions:
+    - rid: 4572434576944398617
+    - rid: 4572434576944398609
+    - rid: 4572434576944398612
+    - rid: 4572434576944398610
+  references:
+    version: 2
+    RefIds:
+    - rid: 4572434576944398609
+      type: {class: Action_CanvasGroup, ns: , asm: Assembly-CSharp}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        canvasGroup: {fileID: 1655093097}
+        alpha: 1
+        duration: 0.3
+        interactable: 1
+        blockRaycasts: 1
+        waitComplete: 1
+        hideAfter: 0
+        ease: 1
+    - rid: 4572434576944398610
+      type: {class: InstructionCommonSceneLoad, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Scene:
+          m_Property:
+            rid: 4572434576944398611
+        m_Mode: 0
+        m_Async: 0
+        m_SceneEntries:
+          m_Entries: []
+    - rid: 4572434576944398611
+      type: {class: GetSceneAsset, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Scene:
+          m_Scene: {fileID: 102900000, guid: afa6f874b9f171247825be56c149ec7f, type: 3}
+          m_SceneName: 02 Gameplay
+          m_SceneIndex: 1
+    - rid: 4572434576944398612
+      type: {class: InstructionCommonTimeWait, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Seconds:
+          m_Property:
+            rid: 4572434576944398613
+        m_Mode:
+          m_UpdateTime: 0
+    - rid: 4572434576944398613
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0.3
+    - rid: 4572434576944398617
+      type: {class: InstructionCommonAudioMusicStopAll, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_WaitToComplete: 1
+        transitionOut: 0.3
 --- !u!1 &1645923686
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3845,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7028302, g: 1, b: 0.77814716, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3876,6 +3962,7 @@ Transform:
   m_Children:
   - {fileID: 1552714457}
   - {fileID: 2002548001}
+  - {fileID: 1615991396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1821187333
@@ -3931,6 +4018,7 @@ MonoBehaviour:
     - rid: 1694013884660973793
     - rid: 1694013863198982412
     - rid: 1694013863198982415
+    - rid: 4572434576944398597
     - rid: 1694013863198982444
   references:
     version: 2
@@ -3967,7 +4055,7 @@ MonoBehaviour:
     - rid: 1694013863198982416
       type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_Value: 9
+        m_Value: 8
     - rid: 1694013863198982444
       type: {class: Action_CanvasGroup, ns: , asm: Assembly-CSharp}
       data:
@@ -3997,6 +4085,25 @@ MonoBehaviour:
       type: {class: GetAudioClip, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
         m_Value: {fileID: 8300000, guid: ab90986f3659f344092bccc8f2d582ff, type: 3}
+    - rid: 4572434576944398597
+      type: {class: InstructionGameObjectSetActive, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_GameObject:
+          m_Property:
+            rid: 4572434576944398598
+        m_Active:
+          m_Property:
+            rid: 4572434576944398599
+    - rid: 4572434576944398598
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 231131041}
+    - rid: 4572434576944398599
+      type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0
 --- !u!1 &1969996608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,6 +4273,9 @@ MonoBehaviour:
   m_Instructions:
     m_Instructions:
     - rid: 1694013863198982436
+    - rid: 4572434576944398415
+    - rid: 4572434576944398601
+    - rid: 4572434576944398604
     - rid: 1694013863198982437
   references:
     version: 2
@@ -4196,6 +4306,58 @@ MonoBehaviour:
         waitComplete: 1
         hideAfter: 0
         ease: 1
+    - rid: 4572434576944398415
+      type: {class: InstructionGameObjectSetActive, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_GameObject:
+          m_Property:
+            rid: 4572434576944398416
+        m_Active:
+          m_Property:
+            rid: 4572434576944398417
+    - rid: 4572434576944398416
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 231131041}
+    - rid: 4572434576944398417
+      type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 1
+    - rid: 4572434576944398601
+      type: {class: InstructionCommonTimeWait, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_Seconds:
+          m_Property:
+            rid: 4572434576944398602
+        m_Mode:
+          m_UpdateTime: 0
+    - rid: 4572434576944398602
+      type: {class: GetDecimalDecimal, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 8
+    - rid: 4572434576944398604
+      type: {class: InstructionGameObjectSetActive, ns: GameCreator.Runtime.VisualScripting, asm: GameCreator.Runtime.Core}
+      data:
+        m_Breakpoint: 0
+        m_IsEnabled: 1
+        m_GameObject:
+          m_Property:
+            rid: 4572434576944398605
+        m_Active:
+          m_Property:
+            rid: 4572434576944398606
+    - rid: 4572434576944398605
+      type: {class: GetGameObjectInstance, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_GameObject: {fileID: 231131041}
+    - rid: 4572434576944398606
+      type: {class: GetBoolValue, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+      data:
+        m_Value: 0
 --- !u!4 &2002548001
 Transform:
   m_ObjectHideFlags: 0
